@@ -1,0 +1,24 @@
+frequency: 50
+
+odom_frame: odom
+base_link_frame: base_link
+world_frame: odom
+
+# odom0: /wheel/odometry
+# odom0_config:
+#   [false, false, false,
+#    false, false, false,
+#    true,  true,  false,  # 只使用线速度X和Y
+#    false, false, true,   # 只使用角速度Z
+#    false, false, false]
+# odom0_relative: true # 是否对观测量做相对处理
+
+imu0: /imu/data
+imu0_config:
+  [false, false, false,
+   true,  true,  true,   # Roll, Pitch, Yaw (如果IMU有可用的姿态角，可以用，否则请设为false)
+   false, false, false,  # 不直接使用线速度
+   true,  true,  true,   # 使用角速度
+   false, false, false]
+imu0_relative: false # 不对观测量做相对处理
+imu0_remove_gravitational_acceleration: true # 自动移除重力影响
